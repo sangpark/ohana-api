@@ -28,29 +28,42 @@ user2.confirm
 
 # Set up test users for the Admin Interface.
 Kernel.puts 'Setting up first test admin...'
-admin = Admin.new name: 'admin with custom domain name',
-                  email: 'ohana@samaritanhouse.com',
+admin = Admin.new name: 'Sang Park',
+                  email: 'sang.park@gmail.com',
                   password: 'ohanatest',
                   password_confirmation: 'ohanatest'
 admin.skip_confirmation!
+admin.super_admin = true
 admin.save
 admin.confirm
 
 Kernel.puts 'Setting up second test admin...'
-admin2 = Admin.new name: 'admin with generic email',
-                   email: 'ohana@gmail.com',
+admin2 = Admin.new name: 'Ivy Andino',
+                   email: 'ivelyse@radical-health.com',
                    password: 'ohanatest',
                    password_confirmation: 'ohanatest'
 admin2.skip_confirmation!
+admin2.super_admin = true
 admin2.save
 admin2.confirm
 
 Kernel.puts 'Setting up test super admin...'
-admin3 = Admin.new name: 'Super Admin',
-                   email: 'masteradmin@ohanapi.org',
+admin3 = Admin.new name: 'Michael Krupnick',
+                   email: 'mkrupnic@gmail.com',
                    password: 'ohanatest',
                    password_confirmation: 'ohanatest'
 admin3.skip_confirmation!
 admin3.super_admin = true
 admin3.save
 admin3.confirm
+
+
+Kernel.puts 'Setting up test super admin...'
+admin4 = Admin.new name: 'Leah Henry',
+                   email: 'oh@hileah.com',
+                   password: 'ohanatest',
+                   password_confirmation: 'ohanatest'
+admin4.skip_confirmation!
+admin4.super_admin = true
+admin4.save
+admin4.confirm

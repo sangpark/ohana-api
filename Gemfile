@@ -98,6 +98,12 @@ group :development do
   gem 'rack-mini-profiler'
   gem 'flamegraph'
   gem 'stackprof'
+  gem 'capistrano', '~> 3.6', require: false
+  gem 'capistrano-rvm',   '~> 0.1', require: false
+  gem 'capistrano-rbenv', '~> 2.0', require: false
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-passenger'
 
   gem 'bummr'
   gem 'reek'
