@@ -126,7 +126,7 @@ en:
       not_an_array: 'is not an Array.'
 
   titles:
-    brand: "Ohana API"
+    brand: "Radical Health API"
     admin: "%{brand} Admin"
     developer: "%{brand} Developers"
 
