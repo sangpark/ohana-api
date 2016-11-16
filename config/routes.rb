@@ -2,12 +2,18 @@ require 'api_constraints'
 require 'subdomain_constraints'
 
 Rails.application.routes.draw do
+  # mount_devise_token_auth_for 'User', {at: 'users', controllers: {registrations: 'users/registrations'}}
+
+  mount_devise_token_auth_for 'User', at: 'users'
+  as :user do
+    # Define routes for User within this block.
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
   # See how all your routes lay out with 'rake routes'.
   # Read more about routing: http://guides.rubyonrails.org/routing.html
 
-  devise_for :users, controllers: { registrations: 'user/registrations' }
+  # devise_for :users, controllers: { registrations: 'user/registrations' }
   devise_for(
     :admins, path: ENV['ADMIN_PATH'] || '/', controllers: { registrations: 'admin/registrations' }
   )

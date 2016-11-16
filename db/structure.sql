@@ -650,7 +650,12 @@ CREATE TABLE users (
     confirmation_sent_at timestamp without time zone,
     unconfirmed_email character varying(255),
     created_at timestamp without time zone,
-    updated_at timestamp without time zone
+    updated_at timestamp without time zone,
+    provider character varying DEFAULT 'email'::character varying NOT NULL,
+    uid character varying DEFAULT ''::character varying NOT NULL,
+    nickname character varying,
+    image character varying,
+    tokens json
 );
 
 
@@ -1200,6 +1205,13 @@ CREATE UNIQUE INDEX index_users_on_reset_password_token ON users USING btree (re
 
 
 --
+-- Name: index_users_on_uid_and_provider; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE UNIQUE INDEX index_users_on_uid_and_provider ON users USING btree (uid, provider);
+
+
+--
 -- Name: locations_admin_emails; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -1377,4 +1389,6 @@ INSERT INTO schema_migrations (version) VALUES ('20150107163352');
 INSERT INTO schema_migrations (version) VALUES ('20150314204202');
 
 INSERT INTO schema_migrations (version) VALUES ('20150315202808');
+
+INSERT INTO schema_migrations (version) VALUES ('20161116180812');
 
