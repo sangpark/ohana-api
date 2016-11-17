@@ -19,9 +19,23 @@ gem 'protected_attributes'
 gem 'jquery-rails', '~> 4.0'
 gem 'haml-rails'
 gem 'select2-rails', '~> 3.5'
+# Compass tools for use with SCSS.
+gem 'compass-rails'
+
+# Font-awesome icons.
+gem 'font-awesome-rails'
+
+# For enabling requirejs-style AMD scripts in the asset pipeline.
+gem 'requirejs-rails', '= 0.9.5'
 
 # Server for deployment
 gem 'puma'
+
+# URL redirects.
+gem 'rack-rewrite', '~> 1.5.0'
+
+# For Google translation API.
+gem 'google-api-client', '~> 0.9'
 
 # Geocoding
 gem 'geocoder'
@@ -37,6 +51,8 @@ gem 'active_model_serializers', '~> 0.8.0'
 gem 'devise', '~> 4.1'
 gem 'omniauth'
 gem 'devise_token_auth'
+
+gem 'sprockets'#, '~> 2.12'
 
 # Authorization
 gem 'pundit'

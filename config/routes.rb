@@ -104,6 +104,11 @@ Rails.application.routes.draw do
       end
     end
   end
-
   root to: 'home#index'
+  resources :locations, only: [:index]
+  get 'locations/*id/' => 'locations#show', as: 'location'
+  get '/about' => 'about#index'
+  post '/feedback' => 'about#index'
+  get '.well-known/status' => 'status#check_status'
+
 end
