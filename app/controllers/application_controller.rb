@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  include DeviseTokenAuth::Concerns::SetUserByToken
+  # include DeviseTokenAuth::Concerns::SetUserByToken
   include Pundit
   # Prevent CSRF attacks by raising an exception (with: :exception),
   protect_from_forgery with: :exception

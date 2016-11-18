@@ -20,6 +20,21 @@
           Feedback
         </a>
       </li>
+      <% if user_signed_in? %>
+        <li>
+          <%= link_to t('navigation.sign_out'), destroy_user_session_path, method: 'delete' %>
+        </li>
+        <li>
+          <%= link_to "Hi, #{current_user.name}", edit_user_registration_path, class: 'logged-in' %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to t('navigation.sign_in'), new_user_session_path %>
+        </li>
+        <li>
+          <%= link_to t('navigation.sign_up'), new_user_registration_path %>
+        </li>
+      <% end %>
     </ul>
   </nav>
   <div class="clearfix"></div>
