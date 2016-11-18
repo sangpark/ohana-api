@@ -115,6 +115,11 @@ class Location < ActiveRecord::Base
     address.changed? && !address.new_record?
   end
 
+  def coordinates
+    return [] unless self.longitude.present? && self.latitude.present?
+    [self.longitude, self.latitude]
+  end
+
   # See app/models/concerns/search.rb
   include Search
 end
