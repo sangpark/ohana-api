@@ -36,7 +36,7 @@
           </section>
         </section>
       <% end %>
-      <% if (@location.fields & location_contact_fields).any? %>
+      <% if @location.website.present? or @location.email.present? %>
         <section class="contact-box-general location-sidebar-section">
           <h1>General Contact Info</h1>
           <section class="location-sidebar-content">
@@ -178,7 +178,7 @@
         </div>
       </section>
     <% end %>
-    <% if (@location.fields & service_fields).any? %>
+    <% if @location.languages.present? or @location.accessibility.present? %>
       <section class="service-opt-box">
         <h1>Service Options</h1>
         <section>

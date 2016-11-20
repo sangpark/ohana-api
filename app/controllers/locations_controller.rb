@@ -24,8 +24,12 @@ class LocationsController < ApplicationController
 
   def show
     id = params[:id].split('/').last
-    @location = Location.get(id)
-
+    @location = Location.includes(
+      contacts: :phones,
+      services: [:categories, :contacts, :phones, :regular_schedules,
+                 :holiday_schedules]
+    ).find(id)
+    logger.debug @location.inspect
     # @keywords = @location.services.map { |s| s[:keywords] }.flatten.compact.uniq
     @categories = @location.services.map { |s| s[:categories] }.flatten.compact.uniq
 
