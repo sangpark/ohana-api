@@ -26,7 +26,8 @@ gem 'compass-rails'
 gem 'font-awesome-rails'
 
 # For enabling requirejs-style AMD scripts in the asset pipeline.
-gem 'requirejs-rails', '= 0.9.5'
+gem 'requirejs-rails', :git => 'https://github.com/MediaFactual/requirejs-rails.git', :branch => 'rails5-1-0-0'
+# gem 'requirejs-rails', '= 0.9.5'
 
 # Server for deployment
 gem 'puma'

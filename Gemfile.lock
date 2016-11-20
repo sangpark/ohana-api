@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/MediaFactual/requirejs-rails.git
+  revision: 85da65957f2d253a83948f050e6ad4aabf13f814
+  branch: rails5-1-0-0
+  specs:
+    requirejs-rails (1.0.0)
+      railties (>= 3.1.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -340,8 +348,6 @@ GEM
       rainbow (~> 2.0)
     representable (2.3.0)
       uber (~> 0.0.7)
-    requirejs-rails (0.9.5)
-      railties (>= 3.1.1)
     responders (2.2.0)
       railties (>= 4.2.0, < 5.1)
     retriable (2.1.0)
@@ -509,7 +515,7 @@ DEPENDENCIES
   rails (~> 4.2)
   rails_12factor
   reek
-  requirejs-rails (= 0.9.5)
+  requirejs-rails!
   rspec-its
   rspec-rails (~> 3.1)
   rubocop
