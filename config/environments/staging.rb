@@ -19,6 +19,9 @@ Rails.application.configure do
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
+  # NOTE: If the sass-rails gem is included it will automatically
+  # be used for CSS compression if no css_compressor is specified.
+  config.assets.css_compressor = :sass
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
@@ -36,7 +39,7 @@ Rails.application.configure do
 
   # Use the info log level to ensure that sensitive information
   # in SQL statements is not saved.
-  config.log_level = :info
+  config.log_level = :debug
 
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
@@ -110,7 +113,7 @@ Rails.application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-  config.action_mailer.default_url_options = { :host => "radical-api.sangparkllc.com" }
+  config.action_mailer.default_url_options = { :host => "radicalrelay.com" }
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 end
